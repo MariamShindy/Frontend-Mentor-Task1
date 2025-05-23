@@ -50,6 +50,8 @@ body {
   width: 35px;
   height: 35px;
   padding-right: 7px;
+  max-width: 100%;
+  height: auto;
 }
 
 .logoText {
@@ -272,4 +274,54 @@ body.light-mode .toggleSwitch {
 
 body.light-mode .toggleSwitch:checked {
   background: var(--color-bg-accent);
+}
+
+
+/*Responsive part*/
+@media (max-width: 900px) {
+  .extensionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .extensionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .topControls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .filterButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filterButtons .filterBtn {
+    flex: 1;
+    margin-left: 0;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logoSection {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .gearIcon {
+    flex: 1 1 100%;
+    text-align: center;
+  }
 }
