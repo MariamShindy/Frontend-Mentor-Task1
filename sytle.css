@@ -1,0 +1,275 @@
+ :root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text-light: hsl(200, 60%, 99%);
+  --color-text-muted: hsl(0, 0%, 78%);
+  --color-text-dark: #222;
+  --color-text-accent: hsl(227, 75%, 14%);
+  --color-bg-primary: #040918;
+  --color-bg-secondary: #091540;
+  --color-bg-surface: #1e293b;
+  --color-bg-muted: #4b5563;
+  --color-bg-accent: hsl(3, 86%, 64%);
+  --color-bg-hover: hsl(226, 11%, 37%);
+  --color-bg-subtle: hsl(225, 23%, 24%);
+  --color-border-muted: hsl(0, 0%, 78%);
+  --color-border-accent: hsl(226, 11%, 37%);
+  --color-light-bg-primary: #EBF2FC;
+  --color-light-bg-secondary: #EEF8F9;
+  --color-light-surface: #ffffff;
+  --color-light-muted: #ccc;
+  --color-light-muted-hover: #bbb;
+  --color-light-text-muted: hsl(226, 11%, 37%);
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  color: var(--color-text-light);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-bg-surface);
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 10px;
+  height: 50px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logoIcon {
+  width: 35px;
+  height: 35px;
+  padding-right: 7px;
+}
+
+.logoText {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+.gearIcon {
+  font-size: 20px;
+  color: var(--color-white);
+  cursor: pointer;
+  background-color: var(--color-bg-subtle);
+  padding: 5px 7px;
+  border-radius: 10px;
+}
+
+.gearIcon:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.extensionCard {
+  background: var(--color-bg-surface);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid var(--color-border-accent);
+}
+
+.cardInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.cardText h3 {
+  margin: 0 0 6px 0;
+}
+
+.cardText p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+
+.pageWrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.pageTitle {
+  font-size: 2em;
+  margin: 0;
+}
+
+.topControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filterButtons .filterBtn {
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 17px;
+  background: var(--color-bg-surface);
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.filterButtons .filterBtn.active,
+.filterBtn:hover {
+  background: var(--color-bg-accent);
+}
+
+.extensionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+}
+
+.extensionCard h3 {
+  margin: 0;
+}
+
+.extensionCard p {
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.removeBtn {
+  background: transparent;
+  color: var(--color-text-muted);
+  padding: 6px 12px;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.removeBtn:hover {
+  background: var(--color-bg-accent);
+  color: var(--color-text-accent); 
+  border: none;
+}
+
+.toggleSwitch {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background: var(--color-bg-muted);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  margin-top: 35px;
+}
+
+.toggleSwitch:checked {
+  background: var(--color-bg-accent);
+}
+
+.toggleSwitch::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.toggleSwitch:checked::before {
+  transform: translateX(20px);
+}
+
+/* IF SWITCHING TO LIGHT MODE */
+body.light-mode {
+  background: linear-gradient(180deg, var(--color-light-bg-primary) 0%, var(--color-light-bg-secondary) 100%);
+  color: var(--color-text-dark);
+}
+
+body.light-mode .navbar {
+  background: var(--color-light-surface);
+  color: var(--color-bg-secondary);
+}
+
+body.light-mode .logoText {
+  color: var(--color-bg-secondary);
+}
+
+body.light-mode .gearIcon {
+  background-color: var(--color-light-muted);
+  color: var(--color-bg-secondary);
+}
+
+body.light-mode .gearIcon:hover {
+  background-color: var(--color-light-muted-hover);
+}
+
+body.light-mode .pageTitle {
+  color: var(--color-bg-secondary);
+}
+
+body.light-mode .filterButtons .filterBtn {
+  background: var(--color-light-surface);
+  color: var(--color-text-accent);
+  border: 1px solid var(--color-border-muted);
+}
+
+body.light-mode .filterButtons .filterBtn.active,
+body.light-mode .filterBtn:hover {
+  background: var(--color-bg-accent);
+  color: white;
+}
+
+body.light-mode .extensionCard {
+  background: var(--color-light-surface);
+  color: var(--color-text-accent);
+  border: 1px solid var(--color-border-muted);
+}
+
+body.light-mode .cardText p,
+body.light-mode .extensionCard p {
+  color: var(--color-light-text-muted);
+}
+
+body.light-mode .removeBtn {
+  color: var(--color-text-accent);
+  border: 1px solid var(--color-border-muted);
+}
+
+body.light-mode .removeBtn:hover {
+  background: var(--color-bg-accent);
+  color: var(--color-bg-secondary);
+}
+
+body.light-mode .toggleSwitch {
+  background: var(--color-light-muted);
+}
+
+body.light-mode .toggleSwitch:checked {
+  background: var(--color-bg-accent);
+}

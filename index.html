@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Konecta Task One</title>
+  <link rel="stylesheet" href="sytle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logoSection">
+      <img src="icons/logo.svg" alt="Logo" class="logoIcon">
+      <span class="logoText">Extensions</span>
+    </div>
+    <div class="gearIcon" id="themeToggle"><img src="icons/icon-sun.svg" alt="ThemeToggleIcon" id="themeIcon"></div>
+  </nav>
+  <div class="pageWrapper">
+
+    <div class="topControls">
+    <h1 class="pageTitle">Extensions List</h1>
+      <div class="filterButtons">
+        <button data-filter="all" class="filterBtn active">All</button>
+        <button data-filter="active" class="filterBtn">Active</button>
+        <button data-filter="inactive" class="filterBtn">Inactive</button>
+      </div>
+    </div>
+    <div id="extensionsContainer" class="extensionsGrid"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
